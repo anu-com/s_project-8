@@ -1,0 +1,242 @@
+*{
+    padding:0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+#main {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+#left {
+    height: 100%;
+    width: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+#nav {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 30px;
+    position: relative;
+    z-index: 999;
+    color: #fff;
+    animation-delay: 1.5s;
+    animation-direction: normal;
+    animation-name: mc;
+    opacity: 0;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+#nav h1 {
+    font-family: "Anurati";
+    text-transform: uppercase;
+    font-size: 22px;
+    font-weight: 300;
+}
+
+#nav i {
+    font-size: 20px;
+}
+
+#left img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0%;
+    left: 0%;
+    object-fit: cover;
+    z-index: 99;
+    animation-delay: 1s;
+    animation-name: rotate;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+
+}
+
+#left>h1 {
+    position: absolute;
+    right: 3%;
+    bottom: 3%;
+    color: #fff;
+    z-index: 99;
+    font-size: 80px;
+    font-family: "voyage";
+    text-align: right;
+    /* line-height: 75px;
+    font-weight: 300; */
+    animation-name: bc;
+    animation-delay: 1.5s;
+    opacity: 0;
+    animation-duration: 1s;
+    animation-timing-function:(0.19, 1, 0.22, 1);
+    animation-fill-mode: forwards;
+    
+}
+
+#right {
+    height: 100%;
+    width: 50%;
+    position: relative;
+}
+
+#img1 {
+    position: absolute;
+    height: 200px;
+    width: 160px;
+    object-fit: cover;
+    object-position: 0 0;
+    animation-name: move;
+    animation-duration: 1s;
+    left: 40%;
+    transform: translate(-50%,0);
+    animation-fill-mode: forwards;
+    
+}
+
+#img2 {
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    top: 40%;
+    left: 10%;
+    object-fit: cover;
+    transform: translate(0,-50%);
+    object-position: 0 0;
+    animation-name: rotate;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+#img3 {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    height: 160px;
+    width: 160px;
+    object-fit: cover;
+    animation-name: move;
+    object-position: 0 0;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+#right>h1{
+    position: absolute;
+    font-size: 40px;
+    font-family: sans-serif;
+    rotate: -90deg;
+    right: -20%;
+    top: 34%;
+    color: #1b1b1b;
+}
+
+#overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    background-color: rgba(255, 0, 0, 0.301);
+    animation-name: move;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+span{
+    color: red;
+}
+
+@keyframes move {
+    0%{
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes rotate{
+    0%{
+        transform: rotate(30deg) scale(1.6);
+        opacity: 0;
+    }
+    100%{
+        transform: rotate(0) scale(1);
+        opacity: 1;
+    }
+}
+
+
+@keyframes bc {
+    0%{
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes mc {
+    0%{
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+@media(max-width:992px) {
+    #main{
+        height: 100%;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    #overlay{
+        height: 100%;
+        width: 100%;
+    }
+    #left{
+        height: 100%;
+        width: 100%;
+        background-image: url(https://images.unsplash.com/photo-1590227632180-80a3bf110871?q=80&w=1515&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+        background-size: cover;
+        background-position: center;   
+    }
+
+    #left>h1{
+        font-size: 20px;
+        top: 80%;
+        bottom: 10%;
+        width: 100%;
+        left: -10%;
+    }
+
+
+    #right{
+        height: 100%;
+        width: 100%;
+    }
+}
